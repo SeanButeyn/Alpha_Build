@@ -3,40 +3,29 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "Creep.generated.h"
-class ATower;
+#include "Projectile.generated.h"
 
 UCLASS()
-class ALPHA_API ACreep : public AActor
+class ALPHA_API AProjectile : public AActor
 {
 	GENERATED_BODY()
+
 private:
-	UPROPERTY(EditAnywhere)
-	int int_health;
-	UPROPERTY(EditAnywhere)
-	int int_attack;
-	UPROPERTY(EditAnywhere)
-	int int_speed;
-	UPROPERTY(EditAnywhere)
-	int int_armor;
-	UPROPERTY(EditAnywhere)
-	int int_level;
-	UPROPERTY(EditAnywhere)
-	int int_levCost;
-	UPROPERTY(EditAnywhere)
-	int int_range;
-
-	UPROPERTY(EditAnywhere)
-	bool b_Alive;
-
 	UPROPERTY(EditAnywhere)
 	FVector Location;
 	UPROPERTY(EditAnywhere)
+	FVector TarLoc;
+	UPROPERTY(EditAnywhere)
 	FVector Direction;
 
+	UPROPERTY(EditAnywhere)
+	int int_speed;
+	UPROPERTY(EditAnywhere)
+	int int_Attack;
+	
 public:	
 	// Sets default values for this actor's properties
-	ACreep();
+	AProjectile();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -46,23 +35,22 @@ public:
 		void NotTick();
 	virtual void Tick( float DeltaSeconds ) override;
 
-	//Interactive functions
-	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	void attack(ATower* tower);
-	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	void timer();
-	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	void kill();
+	// Normalize direction
+	void Normal();
 
-	//Get
+	// Gets and Sets
 	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	int getSpeed();
+	void set_Location(FVector a);
 	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	FVector getLocation();
+	void set_TarLoc(FVector a);
 	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	bool getAlive();
+	void set_Direction(FVector a);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+	void set_speed(int a);
 
-	//Set
 	UFUNCTION(BlueprintCallable, Category = JustDoIt)
-	void setHealth(int a);
+	void setAttack(int a);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+	int getAttack();
+
 };

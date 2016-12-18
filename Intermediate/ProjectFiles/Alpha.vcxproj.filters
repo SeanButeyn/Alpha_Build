@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Alpha.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{88BB550B-EA5C-4A49-B988-4F25748A64A1}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Alpha.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\AlphaEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{CC1B1C19-31EF-4420-A0DC-E1FD193C3E8D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Alpha">
+      <UniqueIdentifier>{7CE65634-B6EA-430B-81E5-C28611CA2E9E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Alpha\Alpha.Build.cs">
+      <Filter>Source\Alpha</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Alpha\Alpha.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Alpha\Alpha.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Alpha\AlphaCharacter.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Alpha\AlphaCharacter.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Alpha\AlphaGameMode.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Alpha\AlphaGameMode.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Alpha\AlphaPlayerController.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Alpha\AlphaPlayerController.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Alpha\Tower.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Alpha\Creep.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Alpha\Player_VS_AI.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Alpha\Basic_Tower.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Alpha\Projectile.h">
+      <Filter>Source\Alpha</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Alpha\Tower.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Alpha\Creep.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Alpha\Player_VS_AI.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Alpha\Basic_Tower.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Alpha\Projectile.cpp">
+      <Filter>Source\Alpha</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

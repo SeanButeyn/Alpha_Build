@@ -48,7 +48,6 @@ void ACreep::Tick( float DeltaTime )
 	
 	SetActorLocation(Location);
 
-
 }
 
 
@@ -84,4 +83,9 @@ bool ACreep::getAlive()
 void ACreep::setHealth(int a)
 {
 	int_health -= a;
+}
+
+void ACreep::setDirection(FVector a)
+{
+	Direction = a;
 }

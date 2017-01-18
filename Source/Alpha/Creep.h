@@ -65,4 +65,6 @@ public:
 	//Set
 	UFUNCTION(BlueprintCallable, Category = JustDoIt)
 	void setHealth(int a);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+	void setDirection(FVector a);
 };

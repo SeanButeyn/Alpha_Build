@@ -14,13 +14,22 @@ class ALPHA_API APlayer_VS_AI : public AGameMode
 	GENERATED_BODY()
 private:
 	//variables
-	int int_Score;
-	int int_CreepsLeft;
-	int int_TowsLeft;
-	int int_RoundsTot;
-	int int_CurrRound;
-	int int_Materials;
-	int int_Prog;
+	UPROPERTY(EditAnywhere)
+		int int_Score;
+	UPROPERTY(EditAnywhere)
+		int int_CreepsLeft;
+	UPROPERTY(EditAnywhere)
+		int int_TowsLeft;
+	UPROPERTY(EditAnywhere)
+		int int_RoundsTot;
+	UPROPERTY(EditAnywhere)
+		int int_CurrRound;
+	UPROPERTY(EditAnywhere)
+		int int_Materials;
+	UPROPERTY(EditAnywhere)
+		int int_Prog;
+	UPROPERTY(EditAnywhere)
+		int CountdownTime;
 
 public:
 	//Destruction and Creation
@@ -28,36 +37,63 @@ public:
 	~APlayer_VS_AI();
 
 	//fetch functions
-	int get_Score();
-	int get_CreepsLeft();
-	int get_TowsLeft();
-	int get_RoundsTot();
-	int get_CurrRound();
-	int get_Materials();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_Score();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_CreepsLeft();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_TowsLeft();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_RoundsTot();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_CurrRound();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_Materials();
 
-	int get_Prog();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		int get_Prog();
 
 	//Set value functions
-	void set_Score(int value);
-	void set_CreepsLeft(int value);
-	void set_TowsLeft(int value);
-	void set_RoundsTot(int value);
-	void set_CurrRound(int value);
-	void set_Materials(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_Score(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_CreepsLeft(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_TowsLeft(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_RoundsTot(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_CurrRound(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_Materials(int value);
 
-	void set_Prog(int value);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void set_Prog(int value);
 
 	//Update every tick
-	void onTick(float dx);
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void onTick();
 
 	//virtual void Tick(float dx) override;
 
 	//Setup phase 
-	void setup();
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void setup();
 
 	//End Round
-	void endRnd();
-	
-	
-	
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void endRnd();
+
+	//End Game
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void endGame();
+
+	//timer
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void AdvanceTimer();
+
+	UFUNCTION(BlueprintCallable, Category = JustDoIt)
+		void CountdownDone();
+
+	FTimerHandle CDTHandle;
 };

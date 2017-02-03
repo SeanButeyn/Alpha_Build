@@ -19,56 +19,38 @@ APlayer_VS_AI::~APlayer_VS_AI()
 
 }
 
-
 ///////////////////////////////////////////////////////Update Every frame
-void APlayer_VS_AI::onTick()
+void APlayer_VS_AI::onTick(float dx)
 {
-	/*
-	We might need two sets of controller data, silly notion as we definitely do but we will need
-	a defense side and a attack side, the player and AI obviously need both and we need to be able to switch them
-	and load the various towers and creeps associated, meaning that players and AI will need to be able to store some
-	manner of tower and creep data, then this would handle who is what.
-	*/
 
 	if (int_CurrRound <= int_RoundsTot)
 	{
 		//Setup Phase
-		//Timer associated, 
-		//purchases of units and 
-		//dealing of resources
 		if (int_Prog == 0)
 		{
+			//if (timerSet == false)
 			setup();
-			if (CountdownTime <1)
-				AdvanceTimer();
-
+			//else if (timerSet == true && timer !=0)
+			//tickDown(dx);
 		}
 
 		//Action phase First player
 		else if (int_Prog == 1)
 		{
-			//Will need to track creeps left alive, 
-			//fetch from attacker data
-
 			if (int_CreepsLeft == 0)
 			{
 				int_Prog = 2;
-				//reload with switched sides
 			}
 			//Action phase Second Player/AI
-			//repeat fetch data of attacker
 			else if (int_Prog == 2)
 			{
 				if (int_CreepsLeft == 0)
 				{
 					int_CurrRound++;
 					endRnd();
-					//Bring up final results and advance to next round if needed
 				}
 			}
 		}
-		if (int_CurrRound > int_RoundsTot)
-			EndMatch();
 		//update HUD displays
 		//UpdateDisplay();
 
@@ -76,12 +58,10 @@ void APlayer_VS_AI::onTick()
 }
 
 ///////////////////////////////////////////////////Set up phase intitiation
-//establish setup time and resources alloted
 void APlayer_VS_AI::setup()
 {
 	set_Materials(1000);
-	CountdownTime = 10;
-	//set_Mana(x);
+	//set_Timer(100000);
 }
 
 /////////////////////////////////////////////////////End Round 
@@ -90,15 +70,7 @@ void APlayer_VS_AI::endRnd()
 	if (int_CurrRound > int_RoundsTot)
 		EndMatch();
 	else
-	{
-		int_Prog = 0;
 		setup();
-	}
-}
-
-void APlayer_VS_AI::endGame()
-{
-	//In total Honesty not sure what type of code should go here.
 }
 
 ////////////////////////////////Display update if I even need to which I don't think I do
@@ -108,23 +80,6 @@ void GameMode::UpdateDisplay()
 //will need the functions for displaying
 }
 */
-
-///////////////////////////////////////////////////////////Timer
-void APlayer_VS_AI::AdvanceTimer()
-{
-	--CountdownTime;
-	if (CountdownTime < 1)
-	{
-		GetWorldTimerManager().ClearTimer(CDTHandle);
-		CountdownDone();
-	}
-}
-
-void APlayer_VS_AI::CountdownDone()
-{
-	int_Prog = 1;
-}
-
 
 
 ///////////////////////////////////////////////////////fetch functions
